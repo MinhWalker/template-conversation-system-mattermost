@@ -1,5 +1,5 @@
-import { SHOW_MODAL, HIDE_MODAL } from "./store/actionTypes";
-import { combineReducers } from "redux";
+import { SHOW_MODAL, HIDE_MODAL } from './action_type';
+import {combineReducers} from 'redux';
 
 const userInfo = (state = {}, action: { type: any }) => {
   switch (action.type) {

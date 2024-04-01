@@ -1,6 +1,7 @@
+import { Select } from "antd";
 import React from "react";
 import { useDispatch } from "react-redux";
-import { showModal } from "./actions";
+import { showModal } from "./action";
 import reducer from "./reducer";
 import { PluginRegistry } from "./types/mattermost-webapp";
 
