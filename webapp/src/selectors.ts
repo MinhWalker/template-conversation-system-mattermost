@@ -1,1 +1,1 @@
-export const getUserInfo = (state: any) => state
+export const getModalState = (state: any) => state;

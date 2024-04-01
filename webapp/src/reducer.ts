@@ -1,17 +1,17 @@
-import { SHOW_MODAL, HIDE_MODAL } from './store/actionTypes';
-import {combineReducers} from 'redux';
+import { SHOW_MODAL, HIDE_MODAL } from "./store/actionTypes";
+import { combineReducers } from "redux";
 
-const userInfo = (state = {}, action) => {
-    switch (action.type) {
+const userInfo = (state = {}, action: { type: any }) => {
+  switch (action.type) {
     case SHOW_MODAL:
-        return state;
+      return state;
     case HIDE_MODAL:
-        return state;
+      return state;
     default:
-        return state;
-    }
+      return state;
+  }
 };
 
 export default combineReducers({
-    userInfo,
+  userInfo,
 });
