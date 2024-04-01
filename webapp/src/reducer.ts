@@ -1,7 +1,7 @@
 import { SHOW_MODAL, HIDE_MODAL } from './action_type';
 import {combineReducers} from 'redux';
 
-const userInfo = (state = {}, action: { type: any }) => {
+const userInfo = (state  = {isShow:false}, action: { type: any }) => {
   switch (action.type) {
     case SHOW_MODAL:
       return state;
