@@ -1,11 +1,11 @@
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { getModalState } from "../../selectors";
-import { hideModal, showModal } from "../../action";
+import { hideModal, showModal } from "../../actions";
 import Root from "./root";
 
 const mapStateToProps = (state: any) => {
-  console.log("modalState", state);
+  console.log("mapStateToProps", state);
 
   return {
     modalState: state,

@@ -10,7 +10,7 @@ interface IRootProps {
 
 const Root: React.FC = (props: IRootProps) => {
   const { modalState, hideModal, showModal } = props;
-  console.log("modalState", modalState);
+  console.log("Root", modalState);
 
   useEffect(() => {
     const fetchUser = async () => {

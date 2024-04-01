@@ -1,5 +1,5 @@
 import React from "react";
-import { showModal } from "./action";
+import { showModal } from "./actions";
 import reducer from "./reducer";
 import { PluginRegistry } from "./types/mattermost-webapp";
 import { store } from "./store";

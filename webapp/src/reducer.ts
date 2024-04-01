@@ -5,12 +5,12 @@ const modalStateReducer = (
   state = { isShow: false },
   action: { type: any; data: any }
 ) => {
-  console.log("action", action);
+  console.log("modalStateReducer-action", action);
   switch (action.type) {
     case SHOW_MODAL:
-      return action.data.isShow;
+      return action.data;
     case HIDE_MODAL:
-      return action.data.isShow;
+      return action.data;
     default:
       return state;
   }
