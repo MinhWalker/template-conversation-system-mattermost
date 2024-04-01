@@ -1,13 +1,12 @@
-import { Select } from "antd";
 import React from "react";
+import { useDispatch } from "react-redux";
 import { showModal } from "./actions";
 import reducer from "./reducer";
-import { store } from "./store";
 import { PluginRegistry } from "./types/mattermost-webapp";
 
+import MyComponent from "components/modal/myComponent";
 import Root from "components/modal/root";
 import manifest, { id as pluginId } from "./manifest";
-import MyComponent from "components/modal/myComponent";
 
 const LHSExample: React.FC = () => {
   return <Root />;
@@ -15,8 +14,9 @@ const LHSExample: React.FC = () => {
 
 // Assuming the store is correctly typed; no change needed here
 const eventHandler = (event: { data: any }) => {
+  const dispatch = useDispatch();
   if (event.data && event.data.type === "show_dialog_template") {
-    store.dispatch(showModal());
+    dispatch(showModal());
   }
 };
 
