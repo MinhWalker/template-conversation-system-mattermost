@@ -1,6 +1,4 @@
-import { Select } from "antd";
 import React from "react";
-import { useDispatch } from "react-redux";
 import { showModal } from "./action";
 import reducer from "./reducer";
 import { PluginRegistry } from "./types/mattermost-webapp";
@@ -9,6 +7,8 @@ import MyComponent from "components/modal/myComponent";
 import Root from "components/modal/root";
 import manifest, { id as pluginId } from "./manifest";
 import { Provider } from "react-redux";
+import { Store, Action } from "redux";
+import { GlobalState } from "mattermost-redux/types/store";
 
 const LHSExample: React.FC = () => {
   return (
@@ -19,16 +19,18 @@ const LHSExample: React.FC = () => {
 };
 
 // Assuming the store is correctly typed; no change needed here
-const eventHandler = (event: { data: any }) => {
-  const dispatch = useDispatch();
+const eventHandler = (event: { data: any }, store) => {
   if (event.data && event.data.type === "show_dialog_template") {
-    dispatch(showModal());
+    store.dispatch(showModal());
   }
 };
 
 export default class Plugin {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-empty-function
-  public async initialize(registry: PluginRegistry) {
+  public async initialize(
+    registry: PluginRegistry,
+    store: Store<GlobalState, Action<Record<string, unknown>>>
+  ) {
     // @see https://developers.mattermost.com/extend/plugins/webapp/reference/
     registry.registerReducer(reducer);
     registry.registerLeftSidebarHeaderComponent(LHSExample);
@@ -37,6 +39,7 @@ export default class Plugin {
       "custom_" + pluginId + "_template_event",
       eventHandler
     );
+    store.dispatch(showModal());
   }
 }
 
