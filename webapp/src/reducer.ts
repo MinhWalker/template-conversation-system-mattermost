@@ -1,10 +1,11 @@
 import { SHOW_MODAL, HIDE_MODAL } from "./action_type";
 import { combineReducers } from "redux";
 
-export const modalStateReducer = (
+const modalStateReducer = (
   state = { isShow: false },
   action: { type: any; data: any }
 ) => {
+  console.log("action", action);
   switch (action.type) {
     case SHOW_MODAL:
       return action.data.isShow;
@@ -14,3 +15,7 @@ export const modalStateReducer = (
       return state;
   }
 };
+
+export default combineReducers({
+  modalStateReducer,
+});

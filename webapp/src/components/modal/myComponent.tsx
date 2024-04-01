@@ -16,7 +16,7 @@ const MyComponent: React.FC = (props: ModalProps) => {
   return (
     <Modal
       title="Select a Template"
-      visible={modalState.isShow ?? true}
+      visible={true}
       onOk={hideModal}
       onCancel={hideModal}
     >
