@@ -4,13 +4,18 @@ import { useDispatch } from "react-redux";
 import { showModal } from "./action";
 import reducer from "./reducer";
 import { PluginRegistry } from "./types/mattermost-webapp";
-
+import { store } from "./store";
 import MyComponent from "components/modal/myComponent";
 import Root from "components/modal/root";
 import manifest, { id as pluginId } from "./manifest";
+import { Provider } from "react-redux";
 
 const LHSExample: React.FC = () => {
-  return <Root />;
+  return (
+    <Provider store={store}>
+      <Root />
+    </Provider>
+  );
 };
 
 // Assuming the store is correctly typed; no change needed here

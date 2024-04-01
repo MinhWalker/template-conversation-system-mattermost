@@ -13,7 +13,7 @@ const MyComponent: React.FC = (props: ModalProps) => {
     "Template 2",
   ]);
 
-  console.log("modalState :", modalState)
+  console.log("modalState :", modalState);
 
   return (
     <Modal
