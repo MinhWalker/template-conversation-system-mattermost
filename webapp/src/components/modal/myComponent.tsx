@@ -13,14 +13,12 @@ const MyComponent: React.FC = (props: ModalProps) => {
     "Template 2",
   ]);
 
-  console.log("modalState :", modalState);
-
   return (
     <Modal
       title="Select a Template"
-      visible={modalState.isShow}
-      onOk={() => hideModal}
-      onCancel={() => hideModal}
+      visible={modalState.isShow ?? true}
+      onOk={hideModal}
+      onCancel={hideModal}
     >
       <Select placeholder="Select a template" style={{ width: 120 }}>
         {templates.map((template, index) => (

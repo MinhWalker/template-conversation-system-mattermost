@@ -1,7 +1,7 @@
 import { SHOW_MODAL, HIDE_MODAL } from "./action_type";
 import { combineReducers } from "redux";
 
-const modalStateReducer = (
+export const modalStateReducer = (
   state = { isShow: false },
   action: { type: any; data: any }
 ) => {
@@ -14,7 +14,3 @@ const modalStateReducer = (
       return state;
   }
 };
-
-export default combineReducers({
-  modalStateReducer,
-});

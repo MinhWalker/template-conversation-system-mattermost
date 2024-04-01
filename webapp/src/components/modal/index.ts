@@ -6,17 +6,15 @@ import Root from "./root";
 
 const mapStateToProps = (state: any) => {
   return {
-    modalState: getModalState(state),
+    modalState: state,
   };
 };
 
-const mapDispatchToProps = (dispatch: any) =>
-  bindActionCreators(
-    {
-      showModal,
-      hideModal,
-    },
-    dispatch
-  );
+const mapDispatchToProps = () => {
+  return {
+    showModal,
+    hideModal,
+  };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Root);
